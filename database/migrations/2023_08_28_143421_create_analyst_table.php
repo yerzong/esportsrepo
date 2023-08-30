@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('user');
             $table->date('date_of_birth');
             $table->longText('image');
-            $table->string('role');
             $table->timestamps();
         });
     }
