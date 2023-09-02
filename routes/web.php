@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\OrganizationController;
+use App\Models\Organization;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('organizations', [OrganizationController::class, 'listOrganization'])->name('organizations');
+Route::post('post-organizations', [CustomerController::class, 'createOrganization'])->name('organizations.post');
+Route::post('update-organizations', [CustomerController::class, 'updateOrganization'])->name('organizations.update');
+Route::get('delete-organizations{id}', [CustomerController::class, 'deleteOrganization'])->name('organizations.delete');
